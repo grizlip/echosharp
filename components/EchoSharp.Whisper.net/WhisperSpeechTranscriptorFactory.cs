@@ -30,7 +30,7 @@ public sealed class WhisperSpeechTranscriptorFactory : ISpeechTranscriptorFactor
     public WhisperSpeechTranscriptorFactory(string modelFileName, WhisperFactoryOptions whisperFactoryOptions, Func<WhisperProcessorBuilder, WhisperProcessorBuilder>? builderConfig = null)
     {
         this.builderConfig = builderConfig;
-        whisperFactory = WhisperFactory.FromPath(modelFileName);
+        whisperFactory = WhisperFactory.FromPath(modelFileName, whisperFactoryOptions);
         builder = whisperFactory.CreateBuilder();
     }
 
